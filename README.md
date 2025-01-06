@@ -1,7 +1,8 @@
-![Logo](assets/logo.svg)
+<p align="center">
+  <a href="https://privacysafe.link"><img src="assets/logo.svg" width="300" height="300" /></a>
+</p>
 
-PrivacySafe Link &ndash; Secret &amp; Secure Notes
-===
+# PrivacySafe Link &ndash; Secret &amp; Secure Notes
 
 PrivacySafe Link is a privacy-focused, encrypted note-sharing service built with React and Golang. Leveraging Redis for data handling and client-side encryption for security, PrivacySafe Link ensures that your notes remain confidential and secure until they are meant to be seen.
 
