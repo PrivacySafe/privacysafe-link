@@ -53,7 +53,7 @@ To get PrivacySafe Link up and running:
 Your PrivacySafe Link service should now be running and accessible via http://localhost:1337
 
 ## Contributing
-Contributions are welcome! Please fork, remix, or create a pull request and happy hacking :)
+Contributions are welcome! Please fork, remix, and create pull requests. Happy Hacking :)
 
 Never send sensitive info about you or other users via direct message or email.
 
