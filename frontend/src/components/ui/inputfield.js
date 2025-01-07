@@ -5,7 +5,7 @@ const InputField = ({ type, name, placeholder, value, onChange, min }) => {
         <input
             type={type}
             name={name}
-            className="w-full p-2 mb-2 bg-[#323232] text-white rounded-md"
+            className="w-full p-2 mb-2 bg-[#102136] text-white rounded-md"
             placeholder={placeholder}
             value={value}
             onChange={onChange}

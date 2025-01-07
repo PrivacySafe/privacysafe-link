@@ -6,52 +6,40 @@ const OptionsSection = ({ options, inputs, handleCheckboxChange, handleInputChan
     return (
         <div className="flex flex-col items-start mb-6">
             <CheckboxWithLabel
-                label="Custom expiration time"
+                label="Custom Expiration (in Seconds)"
                 checked={options.customExpiration}
                 onChange={() => handleCheckboxChange('customExpiration')}
-                color="bg-purple-600 border-purple-600"
+                color="bg-orange-600 border-orange-600"
             />
             {options.customExpiration && (
                 <InputField
                     type="number"
                     name="expirationTime"
-                    placeholder="Enter expiration time in seconds"
+                    placeholder="Number of Seconds"
                     value={inputs.expirationTime}
                     onChange={handleInputChange}
-                    min="1"
+                    min="30"
+                    max="604800"
+                    defaultValue=""
                 />
             )}
 
             <CheckboxWithLabel
-                label="Custom views limit"
+                label="Custom Views Limit"
                 checked={options.customViewsLimit}
                 onChange={() => handleCheckboxChange('customViewsLimit')}
-                color="bg-purple-600 border-purple-600"
+                color="bg-orange-600 border-orange-600"
             />
             {options.customViewsLimit && (
                 <InputField
                     type="number"
                     name="viewsLimit"
-                    placeholder="Enter views limit"
+                    placeholder="Views Limit"
                     value={inputs.viewsLimit}
                     onChange={handleInputChange}
                     min="1"
-                />
-            )}
-
-            <CheckboxWithLabel
-                label="Custom password"
-                checked={options.customPassword}
-                onChange={() => handleCheckboxChange('customPassword')}
-                color="bg-purple-600 border-purple-600"
-            />
-            {options.customPassword && (
-                <InputField
-                    type="password"
-                    name="customPassword"
-                    placeholder="Enter custom password"
-                    value={inputs.customPassword}
-                    onChange={handleInputChange}
+                    max="1000"
+                    defaultValue=""
                 />
             )}
         </div>

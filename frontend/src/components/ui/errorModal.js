@@ -20,12 +20,12 @@ const ErrorModal = ({ showError, message, onClose }) => {
                 </ul>
             );
         }
-        return <p className="text-sm text-white">{msg || "An unexpected error has occurred."}</p>;
+        return <p className="text-sm text-white">{msg || "Unexpected Error"}</p>;
     };
 
     return (
         <div className="fixed inset-0 bg-[#2b2b2b] bg-opacity-70 backdrop-blur-sm overflow-y-auto h-full w-full flex justify-center items-center">
-            <div className="relative p-5 shadow-lg rounded-md bg-[#171717] w-full max-w-md mx-4 border-none">
+            <div className="relative p-5 shadow-lg rounded-md bg-[#021327] w-full max-w-md mx-4 border-none">
                 <div className="mt-3 text-center">
                     <h3 className="text-lg leading-6 font-bold text-white">Error</h3>
                     <div className="mt-2 px-7 py-3">
