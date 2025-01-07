@@ -12,10 +12,12 @@ PrivacySafe Link is a privacy-focused, encrypted note-sharing service built with
 - **Time-based expiration**: Notes can be set to expire after a custom number of time.
 - **View-based expiration**: Notes can be set to expire after a custom number of views.
 - **Redis + client-side encryption**: Utilizes Redis for in memory data storage and retrieval, combined with client-side encryption to ensure that the server never has access to the contents of the notes.
+- **Tor Compatible**: This has been tested with [Tor Browser](https://torproject.org) and works without any changes to the default settings. Example nginx configuration for Tor is in `nginx.conf.tor`
 
 ## Free Public Server
 
-Browse to https://privacysafe.link to try this software for free.
+* Browse to https://privacysafe.link to try this software for free.
+* **Tor Hidden Service:** [bjaxm2ek3e45ie3bohcvdjtrgsjyw72quv4dwupkst5ektwv3lie3myd.onion](http://bjaxm2ek3e45ie3bohcvdjtrgsjyw72quv4dwupkst5ektwv3lie3myd.onion)
 
 ## Getting Started
 
