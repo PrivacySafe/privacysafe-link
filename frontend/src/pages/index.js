@@ -23,8 +23,8 @@ function Index() {
         customPassword: false
     });
     const [inputs, setInputs] = useState({
-        expirationTime: '',
-        viewsLimit: '',
+        expirationTime: '30',
+        viewsLimit: '2',
         customPassword: ''
     });
     const [isEncrypted, setIsEncrypted] = useState(false);
@@ -37,22 +37,32 @@ function Index() {
 
     const handleSecure = async () => {
         if (!text) {
-            raiseError("Please enter some text to secure.");
+            raiseError("Please Write A Note to Encrypt");
             return;
         }
 
-        if (options.customExpiration && (!inputs.expirationTime || inputs.expirationTime < 1)) {
-            raiseError("Expiration time must be a number and at least 1.");
+        if (options.customExpiration && (!inputs.expirationTime || inputs.expirationTime < 30)) {
+            raiseError("Time Must Be At Least 30 Seconds");
+            return;
+        }
+
+        if (options.customExpiration && (inputs.expirationTime > 604800)) {
+            raiseError("Time Must Be Less Than 7 Days (604800 Seconds)");
             return;
         }
 
         if (options.customViewsLimit && (!inputs.viewsLimit || inputs.viewsLimit < 1)) {
-            raiseError("Views limit must be a number and at least 1.");
+            raiseError("View Limit Must Be At Least 1");
+            return;
+        }
+
+        if (options.customViewsLimit && (inputs.viewsLimit > 1000)) {
+            raiseError("View Limit Must Be Less Than 1000");
             return;
         }
 
         if (options.customPassword && (!inputs.customPassword)) {
-            raiseError("Password cannot be empty.");
+            raiseError("Password Cannot Be Empty.");
             return;
         }
 
@@ -61,7 +71,7 @@ function Index() {
 
         const data = await aesEncrypt(text, encKey);
         if (!data) {
-            raiseError("Encryption failed!");
+            raiseError("Encryption Failed");
             return;
         }
 
@@ -82,8 +92,8 @@ function Index() {
                 customPassword: false
             });
             setInputs({
-                expirationTime: '',
-                viewsLimit: '',
+                expirationTime: '30',
+                viewsLimit: '2',
                 customPassword: ''
             });
         } catch (error) {
@@ -117,8 +127,8 @@ function Index() {
             customPassword: false
         });
         setInputs({
-            expirationTime: '',
-            viewsLimit: '',
+            expirationTime: '30',
+            viewsLimit: '2',
             customPassword: ''
         });
     };
@@ -135,18 +145,16 @@ function Index() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-[#171717] text-white">
+        <div className="flex flex-col items-center justify-center h-screen bg-[#021327] text-white">
             <header className="flex flex-col items-center">
                 <div className="flex items-center mb-6">
-                    <LogoSVG className="w-16 h-16 bg-white p-2 rounded-full" />
-                    <h1 className="ml-4 text-2xl font-bold">AETHERNOTE</h1>
+                    <LogoSVG className="w-48 h-48" />
                 </div>
                 <p className="text-sm text-center mb-4 max-w-md px-4">
-                    By default, notes expire after 1 view, do not have a time constraint, and a random key is generated.
-                    You can customize these options using the checkboxes below.
+                    <strong>This Secret &amp; Secure Note Will Disappear After 1 View!</strong>
                 </p>
                 <TextArea
-                    placeholder="Enter your text here"
+                    placeholder="Write Your Note"
                     value={text}
                     onChange={e => setText(e.target.value)}
                     rows={6}
@@ -158,9 +166,9 @@ function Index() {
                     handleCheckboxChange={handleCheckboxChange}
                     handleInputChange={handleInputChange}
                 />
-                <button className="w-32 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg flex items-center justify-center" onClick={handleSecure}>
+                <button className="w-32 py-2 bg-blue-600 hover:bg-green-500 rounded-lg flex items-center justify-center" onClick={handleSecure}>
                     <FontAwesomeIcon icon={faLock} className="mr-2" />
-                    Secure
+                    Create Link
                 </button>
                 <ErrorModal showError={error} message={errorMessages} onClose={() => setError(false)} />
             </header>

@@ -8,6 +8,7 @@ import TextArea from '../components/ui/textArea.js';
 import { ReactComponent as LogoSVG } from '../logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 function Note() {
     const { noteId } = useParams();
@@ -30,7 +31,7 @@ function Note() {
                 setCustomPassword(result.customPassword);
                 setEncryptedData(result.data);
             } catch (err) {
-                setError('The note does not exist or has expired.');
+                setError('PrivacySafe Link Does Not Exist');
                 setShowError(true);
             }
         };
@@ -61,12 +62,12 @@ function Note() {
             }
             const decryptedData = aesDecrypt(encryptedData, derivedKey);
             if (!decryptedData) {
-                throw new Error('Decryption failed');
+                throw new Error('Decryption Failed');
             }
             setContent(decryptedData);
             setShowDecryptionModal(false);
         } catch (err) {
-            setDecryptionError(`Decryption failed with the key: ${key}`);
+            setDecryptionError(`Enter Correct Password. Failed to Decrypt With: ${key}`);
             setShowDecryptionModal(true);
         }
     };
@@ -96,30 +97,33 @@ function Note() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-[#171717] text-white">
+        <div className="flex flex-col items-center justify-center h-screen bg-[#021327] text-white">
             <header className="flex flex-col items-center">
                 <div className="flex items-center mb-6">
-                    <LogoSVG className="w-16 h-16 bg-white p-2 rounded-full" />
-                    <h1 className="ml-4 text-2xl font-bold">AETHERNOTE</h1>
+                    <LogoSVG className="w-48 h-48" />
                 </div>
-                <h2 className="mb-4 text-lg">Decrypted Note</h2>
+                <p className="text-sm text-center mb-4 max-w-md px-4">
+                    <strong>This Note Will Disappear! Make Sure You Read or Copy It.</strong>
+                </p>
+                <h2 className="mb-4 text-lg">Your Secret &amp; Secure Note:</h2>
                 <TextArea
                     value={content}
-                    placeholder="Decrypted content will appear here"
+                    placeholder="Decrypted Text Appears Here"
                     readOnly
                 />
                 <button
-                    className="w-full py-2 mt-4 bg-purple-600 hover:bg-purple-700 rounded-lg flex items-center justify-center"
+                    className="w-full py-2 mt-4 bg-orange-600 hover:bg-green-500 active:animate-bounce rounded-lg flex items-center justify-center"
                     onClick={handleCopy}
                 >
                     <FontAwesomeIcon icon={faCopy} className="mr-2" />
                     Copy content
                 </button>
                 <button
-                    className="w-full py-2 mt-4 bg-purple-900 hover:bg-purple-950 rounded-lg flex items-center justify-center"
+                    className="w-full py-2 mt-4 bg-blue-900 hover:bg-blue-950 rounded-lg flex items-center justify-center"
                     onClick={handleBack}
                 >
-                    Back
+                    <FontAwesomeIcon icon={faLink} className="mr-2" />
+                    New Link
                 </button>
                 <ErrorModal showError={showError} message={error} onClose={handleCloseError} />
                 <DecryptionModal
