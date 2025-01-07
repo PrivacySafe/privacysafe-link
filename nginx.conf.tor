@@ -1,0 +1,17 @@
+server {
+    # Make sure you check the LISTENING_PORT specified in .env (1337 by default) 
+    # and add port forwarding in /etc/tor/torrc (Example:  HiddenServicePort 80 127.0.0.1:1337 )
+    listen 127.0.0.1:80;
+    # This is an example .onion that doesn't exist. Find the real one in /var/lib/tor/hidden_service/hostname
+    server_name 8y6YRKwsWxAxDsXaSfnDtxrokfR5Wk9uLFBkuZozqkMC4hmK.onion;
+    root /;
+    index index.html;
+    
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header Referrer-Policy "strict-origin";
+    add_header X-XSS-Protection "1; mode=block"; 
+    add_header Strict-Transport-Security 'max-age=31536000; includeSubDomains; preload';
+    add_header X-Content-Type-Options nosniff;
+    add_header Content-Security-Policy "default-src * 'unsafe-eval' 'unsafe-inline' data: blob:;";
+    add_header Permissions-Policy "interest-cohort=(),geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()";
+}
