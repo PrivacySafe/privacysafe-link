@@ -1,0 +1,23 @@
+[Unit]
+Description=PrivacySafe Bot (password generator)
+After=docker.service
+Requires=docker.service
+
+[Service]
+#Type=oneshot
+#RemainAfterExit=yes
+#ExecStart=/bin/bash -c "docker compose -f /root/privacysafe-link/docker-compose.yml up --detach"
+#ExecStop=/bin/bash -c "docker compose -f /root/privacysafe-link/docker-compose.yml stop"
+WorkingDirectory=/root/privacysafe-link
+ExecStart=/usr/bin/docker-compose up -d
+ExecStop=/usr/bin/docker stop $(docker ps -a -q)
+Type=simple
+Restart=always
+#User=nobody
+# Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
+#Group=nogroup
+Environment="PATH=/usr/bin:/usr/local/bin"
+Environment="NODE_ENV=production"
+
+[Install]
+WantedBy=multi-user.target
