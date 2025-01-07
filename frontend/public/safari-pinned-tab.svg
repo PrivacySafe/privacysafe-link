@@ -1,19 +1,49 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
- preserveAspectRatio="xMidYMid meet">
-<metadata>
-Created by potrace 1.14, written by Peter Selinger 2001-2017
-</metadata>
-<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-<path d="M559 5100 c-186 -46 -332 -151 -447 -321 -30 -44 -52 -94 -90 -199
--15 -41 -17 -219 -19 -2000 -1 -1870 0 -1958 17 -2026 64 -247 248 -440 504
--528 l61 -21 1945 -2 c1314 -1 1963 1 2000 8 245 47 475 247 552 484 38 116
-37 80 35 2085 -1 1064 -5 1944 -9 1955 -3 11 -11 40 -18 65 -7 25 -27 76 -46
-114 -101 200 -280 340 -499 390 -62 14 -277 15 -1990 15 -1839 0 -1923 -1
--1996 -19z"/>
-</g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="975"
+   height="969.69617"
+   version="1.1"
+   viewBox="0 0 975 969.69612"
+   id="svg6"
+   sodipodi:docname="safari-pinned-tab.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="50"
+     lock-margins="true"
+     fit-margin-left="50"
+     fit-margin-right="50"
+     fit-margin-bottom="50"
+     inkscape:zoom="0.25165414"
+     inkscape:cx="11.921123"
+     inkscape:cy="-21.855393"
+     inkscape:window-width="1920"
+     inkscape:window-height="990"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <path
+     d="M 491.59576,134.90335 C 329.8587,135.22316 197.25548,263.25094 191.25159,424.87298 h 136.31827 c 6.70516,-92.98788 78.64065,-164.83102 165.27959,-165.07255 86.64238,0.23475 158.58558,72.08122 165.29108,165.07255 H 792.48051 C 786.47179,263.03241 653.55135,134.92635 491.60727,134.90335 Z"
+     fill="#ef2008"
+     id="path2"
+     style="fill:#000000;stroke-width:1" />
+  <path
+     d="m 135.42113,454.25755 v 81.46202 h 704.15774 v -81.46202 z m 0,110.83969 v 80.72015 h 704.15774 v -80.72015 z m 91.15796,110.09782 c 50.68344,94.94317 150.45388,159.36771 265.02242,159.59774 114.77787,-0.0196 214.79445,-64.49239 265.563,-159.59774 z"
+     fill="#157ee9"
+     id="path4"
+     style="fill:#000000;stroke-width:1" />
 </svg>

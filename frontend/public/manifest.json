@@ -1,6 +1,6 @@
 {
-  "short_name": "AetherNote",
-  "name": "AetherNote",
+  "short_name": "PrivacySafe Link",
+  "name": "PrivacySafe Link",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#021429",
+  "background_color": "#021429"
 }
