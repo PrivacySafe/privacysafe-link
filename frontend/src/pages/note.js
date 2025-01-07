@@ -109,6 +109,7 @@ function Note() {
                 <TextArea
                     value={content}
                     placeholder="Decrypted Text Appears Here"
+                    rows={5}
                     readOnly
                 />
                 <button

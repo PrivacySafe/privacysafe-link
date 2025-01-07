@@ -157,7 +157,7 @@ function Index() {
                     placeholder="Write Your Note"
                     value={text}
                     onChange={e => setText(e.target.value)}
-                    rows={6}
+                    rows={5}
                     readOnly={false}
                 />
                 <OptionsSection
@@ -172,6 +172,9 @@ function Index() {
                 </button>
                 <ErrorModal showError={error} message={errorMessages} onClose={() => setError(false)} />
             </header>
+            <p className="text-sm" style={{marginTop: 32}}>
+                <a href="http:\/\/bjaxm2ek3e45ie3bohcvdjtrgsjyw72quv4dwupkst5ektwv3lie3myd.onion" id="contact" target="_blank" style={{color: '#6ec1e4'}}>bjaxm2ek3e45ie3bohcvdjtrgsjyw72quv4dwupkst5ektwv3lie3myd.onion</a>
+            </p>
         </div>
     );
 }
