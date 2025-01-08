@@ -7,12 +7,81 @@ User-agent: *
 Disallow: /note/
 Allow: /index.html
 
+# AI2Bot web crawler
 User-agent: AI2Bot
 Disallow: /
 User-agent: Ai2Bot-Dolma
 Disallow: /
 
-# Anthropic AI (Claude)
+# Apple search
+User-agent: Applebot
+Disallow: /
+User-agent: Applebot-Extended
+Disallow: /
+
+# Apple News
+user-agent: AppleNewsBot
+Disallow: /
+
+# ask.com search
+User-agent: Teoma
+Disallow: /
+
+# Baidu search (China)
+User-agent: Baiduspider
+Disallow: /
+User-agent: Baiduspider-image
+Disallow: /
+User-agent: Baiduspider-news
+Disallow: /
+User-agent: Baiduspider-video
+Disallow: /
+
+# Bing ads
+User-agent: adidxbot
+Disallow: /
+
+# Bing search
+User-agent: bingbot
+Disallow: /
+User-agent: BingPreview
+Disallow: /
+User-agent: msnbot
+Disallow: /
+User-agent: msnbot-media
+Disallow: /
+
+# botje.nl search (Netherlands)
+User-agent: Plukkie
+Disallow: /
+
+# Bublup suggestions
+User-agent: BublupBot
+Disallow: /
+
+# Bytespider web crawler
+User-agent: Bytespider
+Disallow: /
+
+# ChatGPT
+User-agent: GPTBot
+Disallow: /
+
+# ChatGPT / OpenAI
+User-agent: OAI-SearchBot
+Disallow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Disallow: /
+User-agent: cohere-training-data-crawler
+Disallow: /
+
+# commoncrawl.org web crawler
+User-agent: CCBot
+Disallow: /
+
+# Claude AI
 User-agent: anthropic-ai
 Disallow: /
 ‍User-agent: Claude-Web
@@ -20,32 +89,55 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
-# Apple
-User-Agent: Applebot
-Disallow: /
-User-agent: Applebot-Extended
+# cliqz.com search (Germany)
+User-agent: Cliqzbot
 Disallow: /
 
-User-agent: Bytespider
+# coccoc.com search (Vietnam)
+User-agent: coccoc
+Disallow: /
+User-agent: coccocbot-image
+Disallow: /
+User-agent: coccocbot-web
 Disallow: /
 
-# CommonCrawl (CCBot) 
-User-agent: CCBot
+# daum.net search (South Korea)
+User-agent: Daumoa
 Disallow: /
 
-User-agent: cohere-ai
-Disallow: /
-User-agent: cohere-training-data-crawler
+# dazoo.fr search (France)
+User-agent: Dazoobot
 Disallow: /
 
+# deusu.de search (Germany)
+User-agent: DeuSu
+Disallow: /
+
+# Diffbot web crawler
 User-agent: Diffbot
+Disallow: /
+
+# DuckDuckGo search
+User-agent: DuckDuckBot
+Disallow: /
+User-agent: DuckDuckGo-Favicons-Bot
 Disallow: /
 
 # DuckDuckGo AI
 User-agent: DuckAssistBot
 Disallow: /
 
+# eurip.com search (Europe)
+User-agent: EuripBot
+Disallow: /
+
+# exploratodo.com search (Latin America)
+User-agent: Exploratodo
+Disallow: /
+
 # Facebook
+User-agent: Facebot
+Disallow: /
 User-Agent: FacebookBot
 Disallow: /
 User-agent: Meta-ExternalAgent
@@ -53,60 +145,121 @@ Disallow: /
 User-agent: Meta-ExternalFetcher
 Disallow: /
 
+# Feedly feed fetcher
+User-agent: Feedly
+Disallow: /
+
+# findx.com search (Europe)
+User-agent: Findxbot
+Disallow: /
+
+# FriendlyCrawler web crawler
 User-agent: FriendlyCrawler
 Disallow: /
 
-# Google Ads
-User-agent: Adsbot-Google-Mobile
+# goo.ne.jp search (Japan)
+User-agent: gooblog
+Disallow: /
+User-agent: ichiro
+Disallow: /
+
+# Google search
+User-agent: Googlebot
+Disallow: /
+User-agent: GoogleOther
 Disallow: /
 
 # Google Images
 User-agent: Googlebot-Image
+Disallow: /
+User-agent: GoogleOther-Image
+Disallow: /
+
+# Google Video
+User-agent: Googlebot-Video
+Disallow: /
+User-agent: GoogleOther-Video
+Disallow: /
+
+# Google News
+User-agent: Googlebot-News
+Disallow: /
+
+# Google Android
+User-agent: Googlebot-Mobile
+Disallow: /
+
+# Google quality checks
+User-agent: AdsBot-Google
+Disallow: /
+User-agent: AdsBot-Google-Mobile
+Disallow: /
+
+# Google app resource fetcher
+User-agent: AdsBot-Google-Mobile-Apps
+Disallow: /
+
+# Google Adsense
+User-agent: Mediapartners-Google
 Disallow: /
 
 # Google AI (Bard)
 User-agent: Google-Extended
 Disallow: /
 
-# More Google
-User-agent: GoogleOther
-Disallow: /
-User-agent: GoogleOther-Image
-Disallow: /
-User-agent: GoogleOther-Video
-Disallow: /
-
-# ChatGPT
-User-agent: GPTBot
-Disallow: /
-
-# Internet Archive
-User-agent: ia_archiver
-Disallow: /
-
+# iAsk AI
 User-agent: iaskspider/2.0
 User-agent: ICC-Crawler
 
+# ImagesiftBot AI
 User-agent: ImagesiftBot
 Disallow: /
 
+# img2dataset web crawler
 User-agent: img2dataset
 Disallow: /
 
+# Internet Archive wayback machine archiver
+User-agent: ia_archiver
+Disallow: /
+
+# ISS Cyber Risk Score web crawler
 User-agent: ISSCyberRiskCrawler
 Disallow: /
 
+# istella.it search (Italy)
+User-agent: istellabot
+Disallow: /
+
+# jike.com / chinaso.com search (China)
+User-agent: JikeSpider
+Disallow: /
+
+# kangaroos.com AI
 User-agent: Kangaroo Bot
 Disallow: /
 
-User-agent: OAI-SearchBot
+# Lycos / Hotbot search
+User-agent: Lycos
 Disallow: /
 
-User-Agent: omgilibot
-Disallow: /
-User-agent: omgili
+# mail.ru search (Russia)
+User-agent: Mail.Ru
 Disallow: /
 
+# mojeek.com search
+User-agent: MojeekBot
+Disallow: /
+
+# naver.com search (South Korea)
+user-agent: Yeti
+Disallow: /
+
+# orange.com search
+User-agent: OrangeBot
+Disallow: /
+
+# PanguBot AI (China)
 User-agent: PanguBot
 Disallow: /
 
@@ -114,18 +267,75 @@ Disallow: /
 User-agent: PerplexityBot
 Disallow: /
 
+# Petal search
 User-agent: PetalBot
 Disallow: /
 
+# Pinterest
+User-agent: Pinterest
+Disallow: /
+
+# Qwant search (France)
+User-agent: Qwantify
+Disallow: /
+
+# rambler.ru search (Russia)
+User-agent: Rambler
+Disallow: /
+
+# Scrapy web crawler
 User-agent: Scrapy
 Disallow: /
 
+# Semrush web crawler
 User-agent: SemrushBot
 Disallow: /
 
+# seznam.cz search (Czech Republic)
+User-agent: SeznamBot
+Disallow: /
+
+# Sidetrade web crawler
 User-agent: Sidetrade indexer bot
 Disallow: /
 
+# so.com search (China)
+User-agent: 360Spider
+Disallow: /
+User-agent: 360Spider-Image
+Disallow: /
+User-agent: 360Spider-Video
+Disallow: /
+User-agent: HaoSouSpider
+Disallow: /
+
+# sogou.com search (China)
+User-agent: Sogou blog
+Disallow: /
+User-agent: Sogou inst spider
+Disallow: /
+User-agent: Sogou News Spider
+Disallow: /
+User-agent: Sogou Orion spider
+Disallow: /
+User-agent: Sogou spider2
+Disallow: /
+User-agent: Sogou web spider
+Disallow: /
+
+# soso.com search (China)
+User-agent: Sosospider
+Disallow: /
+
+# sputnik.ru search (Russia)
+User-agent: SputnikBot
+Disallow: /
+
+# thum.io website screenshots / thumbnails
+User-agent: thum.io
+Disallow: /
+
+# Timpi AI
 User-agent: Timpibot
 Disallow: /
 
@@ -133,12 +343,51 @@ Disallow: /
 User-agent: Twitterbot
 Disallow: /
 
+# Velen web crawler
 User-agent: VelenPublicWebCrawler
 Disallow: /
 
+# Webzio web crawler
+User-Agent: omgilibot
+Disallow: /
+User-agent: omgili
+Disallow: /
 User-agent: Webzio-Extended
 Disallow: /
 
+# wotbox.com search
+User-agent: wotbox
+Disallow: /
+
+# yacy.net p2p search
+User-agent: yacybot
+Disallow: /
+
+# Yahoo search
+User-agent: Slurp
+Disallow: /
+
+# Yandex search (Russia)
+User-agent: Yandex
+Disallow: /
+User-agent: YandexMobileBot
+Disallow: /
+
+# yioop.com search
+User-agent: YioopBot
+Disallow: /
+
+# yooz.ir search (Iran)
+User-agent: yoozBot
+Disallow: /
+
+# you.com AI
 User-agent: YouBot
 Disallow: /
 
+# youdao.com search (China)
+User-agent: YoudaoBot
+Disallow: /
+
+# crawling rule(s) for above bots
+Disallow:
