@@ -1,12 +1,12 @@
 {
   "name": "privacysafe-link",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "crypto-js": "^4.2.0",
+    "ecma-nacl": "^2.5.3",
     "react": "^18.3.1",
     "react-router-dom": "^6.24.1",
     "react-scripts": "5.0.1",

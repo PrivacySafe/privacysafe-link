@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { retrieveNote } from '../api/api.js';
-import { aesDecrypt, deriveKeyFromPassword } from '../utils/cryptoUtils.js';
+import { decryptText, deriveKeyFromPassword } from '../utils/cryptoUtils.js';
 import ErrorModal from '../components/ui/errorModal.js';
 import DecryptionModal from '../components/ui/decryptionModal.js';
 import TextArea from '../components/ui/textArea.js';
@@ -54,13 +54,13 @@ function Note() {
         }
     }, [location.hash, encryptedData]);
 
-    const decryptNoteData = (key) => {
+    const decryptNoteData = async (key) => {
         try {
             let derivedKey = key;
             if (customPassword) {
-                derivedKey = deriveKeyFromPassword(key);
+                derivedKey = await deriveKeyFromPassword(key);
             }
-            const decryptedData = aesDecrypt(encryptedData, derivedKey);
+            const decryptedData = decryptText(encryptedData, derivedKey);
             if (!decryptedData) {
                 throw new Error('Decryption Failed');
             }
