@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { generateAESKey, aesEncrypt, deriveKeyFromPassword } from '../utils/cryptoUtils';
+import { generateRandomKey, encryptText, deriveKeyFromPassword } from '../utils/cryptoUtils';
 import { createNote } from '../api/api';
 import { prettifyError } from '../utils/helper';
 import { ReactComponent as LogoSVG } from '../logo.svg';
@@ -66,12 +66,17 @@ function Index() {
             return;
         }
 
-        const encKey = options.customPassword ? await deriveKeyFromPassword(inputs.customPassword) : await generateAESKey();
+        const encKey = options.customPassword ? await deriveKeyFromPassword(inputs.customPassword) : generateRandomKey();
         setKey(encKey);
 
-        const data = await aesEncrypt(text, encKey);
-        if (!data) {
+        let data = undefined;
+        try {
+            data = encryptText(text, encKey);
+        } catch(err) {
+            console.error("Encryption Failed", err);
             raiseError("Encryption Failed");
+        }
+        if (!data) {
             return;
         }
 

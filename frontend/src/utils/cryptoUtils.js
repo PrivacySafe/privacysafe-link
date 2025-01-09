@@ -1,49 +1,45 @@
-const CryptoJS = require('crypto-js');
+import { secret_box as sbox, scrypt } from 'ecma-nacl';
+import {
+    base64StringToBytes,
+    bytesToBase64String,
+    bytesToHexString,
+    hexStringToBytes,
+    stringToUtf8Bytes,
+    utf8BytesToString
+} from './encodings.js';
 
-const generateAESKey = () => {
-    const key = CryptoJS.lib.WordArray.random(32);
-    return key.toString(CryptoJS.enc.Hex);
+const generateRandomKey = () => {
+    const keyBytes = crypto.getRandomValues(new Uint8Array(sbox.KEY_LENGTH));
+    return bytesToHexString(keyBytes);
 };
 
-const aesEncrypt = (text, keyHex) => {
-    const key = CryptoJS.enc.Hex.parse(keyHex);
-    const iv = CryptoJS.lib.WordArray.random(16);
-    const encrypted = CryptoJS.AES.encrypt(text, key, { iv: iv });
-    const encryptedBase64 = encrypted.ciphertext.toString(CryptoJS.enc.Base64);
-    const ivHex = iv.toString(CryptoJS.enc.Hex);
-    return ivHex + encryptedBase64;
+const encryptText = (text, keyHex) => {
+    const textBytes = stringToUtf8Bytes(text);
+    const keyBytes = hexStringToBytes(keyHex);
+    const nonce = crypto.getRandomValues(new Uint8Array(sbox.NONCE_LENGTH));
+    const packedBytes = sbox.formatWN.pack(textBytes, nonce, keyBytes);
+    return bytesToBase64String(packedBytes);
 };
 
-const aesDecrypt = (cipherTextWithIv, keyHex) => {
-    const key = CryptoJS.enc.Hex.parse(keyHex);
-
-    const ivHex = cipherTextWithIv.slice(0, 32);
-    const encryptedBase64 = cipherTextWithIv.slice(32);
-
-    const iv = CryptoJS.enc.Hex.parse(ivHex);
-    const cipherText = CryptoJS.enc.Base64.parse(encryptedBase64);
-
-    const decrypted = CryptoJS.AES.decrypt(
-        { ciphertext: cipherText },
-        key,
-        { iv: iv }
-    );
-
-    return decrypted.toString(CryptoJS.enc.Utf8);
+const decryptText = (packed, keyHex) => {
+    const packedBytes = base64StringToBytes(packed);
+    const keyBytes = hexStringToBytes(keyHex);
+    const textBytes = sbox.formatWN.open(packedBytes, keyBytes);
+    return utf8BytesToString(textBytes);
 }
 
-const deriveKeyFromPassword = (password) => {
-    const fixedSalt = CryptoJS.enc.Hex.parse('0123456789abcdef0123456789abcdef');
-    const key = CryptoJS.PBKDF2(password, fixedSalt, {
-        keySize: 256 / 32,
-        iterations: 100000,
-    });
-    return key.toString(CryptoJS.enc.Hex);
+const deriveKeyFromPassword = async (password) => {
+    const fixedSalt = hexStringToBytes('0123456789abcdef0123456789abcdef');
+    const keyBytes = scrypt(
+        password, fixedSalt, 17, 8, 2, sbox.KEY_LENGTH,
+        p => console.log(`Key derivation progress: ${p}%`)
+    );
+    return bytesToHexString(keyBytes);
 };
 
 export {
-    generateAESKey,
-    aesEncrypt,
-    aesDecrypt,
+    generateRandomKey,
+    encryptText,
+    decryptText,
     deriveKeyFromPassword,
 }
