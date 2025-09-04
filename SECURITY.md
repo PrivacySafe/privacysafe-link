@@ -9,7 +9,7 @@ We are dedicated to releasing PrivacySafe products and services built upon ethic
 
 ## [Open Bug Bounty](https://www.openbugbounty.org/bugbounty/privacysafe/)
 
-Our program is listed at Open Bug Bounty, a community of 55K+ security researchers around the world. You should report vulnerabilities there if feasible: 
+Our program is listed at Open Bug Bounty, a community of ~70K security researchers around the world. You should report vulnerabilities there if feasible: 
 
 [https://openbugbounty.org/bugbounty/privacysafe/](https://www.openbugbounty.org/bugbounty/privacysafe/)
 
