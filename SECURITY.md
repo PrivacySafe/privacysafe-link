@@ -1,5 +1,5 @@
 # Vulnerability Disclosure Policy &amp; Bug Bounty Program
-_Last Updated: July 27, 2025_
+_Last Updated: September 4, 2025_
 
 ## <a name="introduction">Introduction</a>
 
