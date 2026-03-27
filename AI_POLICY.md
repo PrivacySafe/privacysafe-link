@@ -3,7 +3,7 @@ _Last Updated: March 27, 2026_
 
 ## 0. Scope and Terminology
 
-In this policy, the terms "AI" and "artificial intelligence" are used to refer to generative AI or hybrid AI systems that incorporate machine learning (ML) and large language models (LLMs), and that produce primarily probabilistic outputs. This includes commonly used tools such as ChatGPT, GitHub Copilot, Claude, Gemini, and similar systems.
+In this policy, the terms "AI" and "artificial intelligence" are used to refer to systems that incorporate machine learning (ML) and large language models (LLMs) and that produce primarily probabilistic outputs. These systems are commonly referred to as "generative AI" or "hybrid AI" in academic literature. This includes popular software such as ChatGPT, Copilot, Claude, Gemini, Grok, and similar systems.
 
 ## 1. Purpose and Principles
 
